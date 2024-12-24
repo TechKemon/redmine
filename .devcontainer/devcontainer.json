@@ -1,0 +1,25 @@
+{
+    "name": "Redmine Development",
+    "dockerComposeFile": ["../docker-compose.yml"],
+    "service": "redmine",
+    "workspaceFolder": "/workspace",
+    "forwardPorts": [3000],
+    "portsAttributes": {
+        "3000": {
+            "label": "Redmine Web Interface",
+            "onAutoForward": "notify"
+        }
+    },
+    "postCreateCommand": "echo 'Environment is ready!'",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    },
+    "remoteUser": "root"
+}
